@@ -1,0 +1,48 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 130px;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.card-content{
+    padding: 40px 70px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-icon{
+    height: 150px;
+}
+
+.text{
+    margin: 5px 0;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.profile-btn{
+    max-width: 150px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--dark-btn);
+    color: var(--bright-txt);
+    padding: 5px 0;
+}

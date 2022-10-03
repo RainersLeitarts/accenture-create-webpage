@@ -1,0 +1,41 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 130px;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.remove-btn{
+    background-color: var(--red-btn);
+}
+
+.time-picker{
+    display: flex;
+    height: 20px;
+    max-width: 100px;
+    width: 100%;
+    background-color: royalblue;
+}
+
+.picker-btn{
+    height: 100%;
+    width: 20px;
+    background-color: var(--dark-btn);
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: var(--bright-txt);
+    cursor: pointer;
+}
+
+.picker-content{
+    text-align: center;
+    flex-grow: 1;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}

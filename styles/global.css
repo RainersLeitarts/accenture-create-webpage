@@ -1,0 +1,140 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--background);
+    padding: 0;
+    margin: 0;
+    font-family: Inter;
+}
+
+:root {
+    --dark-btn: #363636;
+    --red-btn: #C93333;
+    --dark-txt: #000000;
+    --bright-txt: #FFFFFF;
+    --background: #D9D9D9;
+}
+
+.container{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    color: var(--bright-txt);
+    font-style: italic;
+    text-align: center;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--dark-btn);
+    width: 100%;
+    height: 100px;
+    color: var(--bright-txt);
+    font-size: 14px;
+    display: flex;
+    padding: 20px;
+    justify-self: flex-end;
+}
+
+.footer-content{
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-text{
+    margin: 0;
+}
+
+.navbar{
+    height: 60px;
+    background-color: var(--dark-btn);
+    border-radius: 30px;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.navbar-content{
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    align-items: center;
+    font-size: 18px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--bright-txt);
+}
+
+.card{
+    background-color: var(--bright-txt);
+    color: var(--dark-txt);
+    width: 100%;
+    border-radius: 30px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.card-content{
+    width: 100%;
+    padding: 50px 30px;
+}
+
+.card-row{
+    width: 100%;
+    height: 50px;
+    background-color: var(--background);
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.card-info{
+    background-color: transparent;
+    height: 20px;
+    font-weight: 600;
+}
+
+.card-col{
+    flex: 1 1 0px;
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.center{
+    justify-content: center;
+}
+
+.card-btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: var(--dark-btn);
+    color: var(--bright-txt);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hidden{
+    width: 100%;
+    height: 100%;
+}
