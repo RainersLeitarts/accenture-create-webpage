@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        errorList.innerHTML = ''
+        loginErrorList.innerHTML = ''
         const email = loginEmail.value.trim()
         const password = loginPassword.value.trim()
         let hasErrors = false
