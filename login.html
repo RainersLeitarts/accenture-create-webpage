@@ -15,30 +15,35 @@
     <div class="container">
         <div class="content">
             <h1 class="title">Movie rental</h1>
-            <form class="form-container">
+            <form id="login-form" class="form-container">
+                <ul id="error-list">
+                    <!-- <li class="error">This is an error</li> -->
+                </ul>
                 <label for="email" class="input-label">Email</label>
-                <input id="email" class="form-input" placeholder="email" />
+                <input id="email" class="form-input" placeholder="email" required />
                 <label for="password" class="input-label">Password</label>
-                <input id="password" class="form-input" placeholder="password" />
-                <a href="/home.html" class="form-btn">Sign in</a>
+                <input id="password" class="form-input" placeholder="password" type="password" required />
+                <button type="submit" class="form-btn">Sign in</button>
             </form>
-            <form class="form-container">
-                <form class="form-container">
-                    <label for="name" class="input-label">Name</label>
-                    <input id="name" class="form-input" placeholder="name" />
-                    <label for="surname" class="input-label">Surname</label>
-                    <input id="surname" class="form-input" placeholder="surname" />
-                    <label for="email" class="input-label">Email</label>
-                    <input id="email" class="form-input" placeholder="email" />
-                    <label for="email2" class="input-label">Email again</label>
-                    <input id="email2" class="form-input" placeholder="email" />
-                    <label for="password" class="input-label">Password</label>
-                    <input id="password" class="form-input" placeholder="password" />
-                    <label for="password2" class="input-label">Password again</label>
-                    <input id="password2" class="form-input" placeholder="password" />
-                    <a href="/home.html" class="form-btn">Register</a>
-                </form>
+            <form id="register-form" class="form-container">
+                <ul id="error-list">
+                    <!-- <li class="error">This is an error</li> -->
+                </ul>
+                <label for="reg-name" class="input-label">Name</label>
+                <input id="reg-name" class="form-input" placeholder="name" required />
+                <label for="reg-surname" class="input-label">Surname</label>
+                <input id="reg-surname" class="form-input" placeholder="surname" required />
+                <label for="reg-email" class="input-label">Email</label>
+                <input id="reg-email" class="form-input" placeholder="email" required />
+                <label for="reg-email2" class="input-label">Email again</label>
+                <input id="reg-email2" class="form-input" placeholder="email" required />
+                <label for="reg-password" class="input-label">Password</label>
+                <input id="reg-password" class="form-input" placeholder="password" type="password" required />
+                <label for="reg-password2" class="input-label">Password again</label>
+                <input id="reg-password2" class="form-input" placeholder="password" type="password" required />
+                <button type="submit" class="form-btn">Register</button>
             </form>
+            <button id="register-btn" type="submit" class="form-btn">Register</button>
         </div>
         <footer class="footer">
             <div class="footer-content">
@@ -47,6 +52,8 @@
             </div>
         </footer>
     </div>
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,5 @@
+const myMovies = []
+
+export {
+    myMovies
+}
