@@ -49,4 +49,11 @@ const movies = [
     }
 ]
 
-export default movies
+const initMovies = () => {
+    if(localStorage.getItem('movies') === null){
+        localStorage.setItem('movies', JSON.stringify(movies))
+    }
+}
+
+
+export default initMovies

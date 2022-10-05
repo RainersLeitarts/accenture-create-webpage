@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./styles/profile.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div class="content">
@@ -18,6 +20,7 @@
                     <a class="nav-link" href="/home.html">Home</a>
                     <a class="nav-link" href="/yourMovies.html">Your movies</a>
                     <a class="nav-link" href="/profile.html">Profile</a>
+                    <a class="nav-link" id="logout" href="/login.html">Logout</a>
                 </div>
             </div>
             <div class="card">
@@ -28,9 +31,9 @@
                     <div class="user-info">
                         <img src="./icons/profile.png" alt="" class="profile-icon">
                         <div class="info-text">
-                            <p class="text"><span class="bold">Name: </span>John</p>
-                            <p class="text"><span class="bold">Surname: </span>Newman</p>
-                            <p class="text"><span class="bold">Email: </span><span id="email">john.newman@mail.com</span></p>
+                            <p class="text"><span class="bold">Name: </span><span id="name"></span></p>
+                            <p class="text"><span class="bold">Surname: </span id="name"><span id="surname"></span></p>
+                            <p class="text"><span class="bold">Email: </span><span id="email"></span></p>
                         </div>
                     </div>
                     <div class="buttons">
@@ -47,6 +50,8 @@
             </div>
         </footer>
     </div>
+    <script defer type="module" src="./scripts/navbar.js"></script>
     <script defer type="module" src="./scripts/profile.js"></script>
 </body>
+
 </html>

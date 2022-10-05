@@ -1,4 +1,11 @@
-import myMovies from "./myMovies.js";
+//check if user is logged in
+const loggedInUser = JSON.parse(localStorage.getItem('user'))
+
+if (loggedInUser === null) {
+    window.location.href = window.location.origin + '/login.html'
+}
+
+const myMovies = loggedInUser.myMovies
 
 const card = document.querySelector('#card-content')
 
@@ -31,9 +38,35 @@ myMovies.forEach(movie => {
 
     //implement remove movie functionality onClick
     btn.addEventListener('click', () => {
-        //remove movie from array
-        const index = myMovies.findIndex(myMovie => myMovie.id === movie.id)
-        myMovies.splice(index, 1)
+        //remove movie from the user's myMovie array
+        //get current user
+        const user = JSON.parse(localStorage.getItem('user'))
+
+        //get all users array
+        const users = JSON.parse(localStorage.getItem('users'))
+
+        //get current user index in users array
+        const index = users.findIndex(item => item.id === user.id)
+
+        //modify user's from users array at index myMovies array
+        users[index].myMovies = users[index].myMovies.filter(myMovie => myMovie.id !== movie.id)
+
+        //store current logged in user
+        localStorage.setItem('user', JSON.stringify(users[index]))
+
+        //store all users
+        localStorage.setItem('users', JSON.stringify(users))
+
+        //add removed movie back to the catalog
+        //get movies from localStorage
+        const movies = JSON.parse(localStorage.getItem('movies'))
+
+        //increment movie's at movies[index] stock value by 1
+        movies[movies.findIndex(item => item.name === movie.name)].stock += 1
+
+        //store the updated movies array in localStorage
+        localStorage.setItem('movies', JSON.stringify(movies))
+
         //remove movie from DOM
         card.removeChild(row)
     })
