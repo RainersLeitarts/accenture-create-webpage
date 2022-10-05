@@ -21,16 +21,20 @@ emailResetBtn.addEventListener('click', () => {
         return
     }
 
+    //modify users email and store changes in localStoreage
     user.email = email
-    
     const users = JSON.parse(localStorage.getItem('users'))
 
+    //find users index in users array and modify the user's email at that index
     users[users.findIndex(item => item.username === user.username)].email = email
 
+    //store modified logged in user in localStorage
     localStorage.setItem('user', JSON.stringify(users[users.findIndex(item => item.id === user.id)]))
 
+    //store the modified users array
     localStorage.setItem('users', JSON.stringify(users))
 
+    //set new email text
     emailText.innerText = email
 })
 
