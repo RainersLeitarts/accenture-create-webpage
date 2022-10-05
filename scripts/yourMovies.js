@@ -94,12 +94,81 @@ myMovies.forEach(movie => {
         if (movie.time === 12) return
         movie.time -= 12
 
+        //get current user
+        const user = JSON.parse(localStorage.getItem('user'))
+
+        //get all users array
+        const users = JSON.parse(localStorage.getItem('users'))
+
+        //get current user index in users array
+        const index = users.findIndex(item => item.id === user.id)
+
+        //modify user's from users array at index myMovies array
+        //find the index of the movie to modify
+        const myMovies = users[index].myMovies
+
+        //decrement the time of the specified movie
+        const selectedMovie = myMovies[myMovies.findIndex(item => item.id === movie.id)]
+
+        //find the price of selected movie per 12 hours in all movies object from localStorage
+        const allMovies = JSON.parse(localStorage.getItem('movies'))
+        const pricePer12H = allMovies.find(item => item.name === movie.name).price
+
+        //decrement selected movie time
+        selectedMovie.time -= 12
+
+        //Math.round() removes extra numbers after .
+        selectedMovie.price = Math.round((selectedMovie.price - pricePer12H) * 100) / 100 
+        
+        //change price text
+        price.innerText = `${selectedMovie.price}$`
+
+        //store current logged in user
+        localStorage.setItem('user', JSON.stringify(users[index]))
+
+        //store all users
+        localStorage.setItem('users', JSON.stringify(users))
+
         timePickerContent.innerText = `${movie.time}h`
     })
 
     moreBtn.addEventListener('click', () => {
         if (movie.time === 168) return
         movie.time += 12
+        //get current user
+        const user = JSON.parse(localStorage.getItem('user'))
+
+        //get all users array
+        const users = JSON.parse(localStorage.getItem('users'))
+
+        //get current user index in users array
+        const index = users.findIndex(item => item.id === user.id)
+
+        //modify user's from users array at index myMovies array
+        //find the index of the movie to modify
+        const myMovies = users[index].myMovies
+
+        //decrement the time of the specified movie
+        const selectedMovie = myMovies[myMovies.findIndex(item => item.id === movie.id)]
+
+        //find the price of selected movie per 12 hours in all movies object from localStorage
+        const allMovies = JSON.parse(localStorage.getItem('movies'))
+        const pricePer12H = allMovies.find(item => item.name === movie.name).price
+
+        //increment selected movie time
+        selectedMovie.time += 12
+
+        //Math.round() removes extra numbers after .
+        selectedMovie.price = Math.round((selectedMovie.price + pricePer12H) * 100) / 100
+
+        //change price text
+        price.innerText = `${selectedMovie.price}$`
+
+        //store current logged in user
+        localStorage.setItem('user', JSON.stringify(users[index]))
+
+        //store all users
+        localStorage.setItem('users', JSON.stringify(users))
 
         timePickerContent.innerText = `${movie.time}h`
     })
